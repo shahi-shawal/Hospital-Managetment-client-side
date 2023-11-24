@@ -1,12 +1,16 @@
-import { useContext} from 'react';
-// import { AuthContext } from '../../Provider/AuthProvider';
-import { Link, useNavigate } from 'react-router-dom';
+
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import useAxiosPublic from '../../Hooks/useAxiosPublic';
 import logimg from "../../assets/images/image (14).png"
+import { useContext } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
+import { toast } from 'react-hot-toast';
+// import useAuth from '../../Hooks/useAuth';
 const Login = () => {
   const navigate = useNavigate()
 //   const axiosPublic = useAxiosPublic()
-    // const {login, googlelogin}= useContext(AuthContext)
+const location = useLocation()
+    const {login}=useContext(AuthContext)
     const handelLogin=e=>{
         e.preventDefault()
         const form =e.target
@@ -14,13 +18,26 @@ const Login = () => {
         const password = form.password.value 
         const loginData = {email, password}
         console.log(loginData);
+        
+        if (password.length < 6) {
+          return toast.error("Password should be at least 6 characters");
+        } else if (!/[A-Z]/.test(password) || !/[.!@#$%^&*()_+-=]/.test(password)) {
+           return toast.error("Password should contain at least one uppercase letter and one special character");
+        } else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) {
+          return  toast.error("Please check your email and provide a valid email address");
+        }
+
+
 
         login(email, password)
         .then(result =>{
           console.log(result.user)
-           navigate("/")
+          navigate(location?.state? location.state : "/")
+          return  toast.success("Log in successfully")
         })
-        .catch(error=> console.error(error))
+        .catch(error=> {console.error(error)
+          return toast.error("Check your Email and Password")
+        })
     }
     
     return (
@@ -53,7 +70,7 @@ const Login = () => {
           <button  className="btn bg-white hover:-translate-y-2">Sign in</button>
         </div>
         </div>
-        <h1 className='text-white text-center mt-6'>Don't have an account yet? <span className='text-black'><Link to="/signup">Sign up </Link></span> here</h1>
+        <h1 className='text-white text-center mt-6'>Dont have an account yet? <span className='text-black'><Link to="/signup">Sign up </Link></span> here</h1>
       </form>
     </div>
   </div>

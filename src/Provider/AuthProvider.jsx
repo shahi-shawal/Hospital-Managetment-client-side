@@ -1,13 +1,13 @@
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import {createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-// import auth from "../Config/firebase.config,";
+import auth from "../Config/firebase.config"
+
 // import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 export const AuthContext = createContext()
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({children}) => {
 //   const axiosPublic = useAxiosPublic()
-    const googleProvider = new GoogleAuthProvider()
    const [user, setUser]= useState(null)
    const [loading, setloading]= useState(true)
 
@@ -27,24 +27,21 @@ const AuthProvider = ({children}) => {
     signOut(auth)
  }
 
- const googlelogin =()=>{
-  return signInWithPopup(auth, googleProvider)
- }
    useEffect(()=>{
     const unSubscribe = onAuthStateChanged(auth, currentUser=>{
         setUser(currentUser)
-        const userInfo = {email: currentUser.email}
-      if(currentUser){
-             axiosPublic.post("/jwt", userInfo)  
-             .then(res=>{
-              if (res.data.token) {
-                localStorage.setItem('access-token', res.data.token)
-              }
-             })
-      }
-      else{
-          localStorage.removeItem('access token')
-      }
+        // const userInfo = {email: currentUser.email}
+      // if(currentUser){
+      //        axiosPublic.post("/jwt", userInfo)  
+      //        .then(res=>{
+      //         if (res.data.token) {
+      //           localStorage.setItem('access-token', res.data.token)
+      //         }
+      //        })
+      // }
+      // else{
+      //     localStorage.removeItem('access token')
+      // }
 
         setloading(false)
 
@@ -52,8 +49,8 @@ const AuthProvider = ({children}) => {
             return unSubscribe
         }
     })
-   },[axiosPublic])
-
+   },[])
+  //  axiosPublic
 
 
    const authInfo={
@@ -62,7 +59,6 @@ const AuthProvider = ({children}) => {
      createUser,
      login,
      logOut,
-     googlelogin
     }
     return (
         <AuthContext.Provider value={authInfo}>
