@@ -1,0 +1,33 @@
+[
+    {
+      "title": "Special Health Checkup Offer",
+      "image": "https://i.ibb.co/g9YtRHh/young-female-doctor-posing-corridor-hospital.jpg",
+      "text": "Take charge of your health with our comprehensive health checkup. Use the coupon code below for an exclusive discount!",
+      "coupon": {
+        "code": "MEDICAL50",
+        "discountRate": 0.5
+      },
+      "isActive": "true"
+    },
+    {
+      "title": "Flu Vaccination Clinic",
+      "image": "https://i.ibb.co/L57gct5/young-handsome-physician-medical-robe-with-stethoscope.jpg",
+      "text": "Protect yourself and your loved ones from the flu. Get vaccinated at our clinic today!",
+      "coupon": {
+        "code": "FLU10",
+        "discountRate": 0.1
+      },
+      "isActive": "false"
+    },
+    {
+      "title": "Wellness Workshop Series",
+      "image": "https://i.ibb.co/9rvgzcv/successful-medical-team.jpg",
+      "text": "Join our wellness workshops to learn tips for a healthier lifestyle. Limited-time discount available with the code below!",
+      "coupon": {
+        "code": "WELLNESS15",
+        "discountRate": 0.15
+      },
+      "isActive": "false"
+    }
+  ]
+  

@@ -1,0 +1,111 @@
+[
+    {
+      "id": 1,
+      "title": "Blood Test",
+      "image": "https://i.ibb.co/mR6Zmmf/4999.jpg",
+      "availableDates": ["2023-12-01", "2023-12-05", "2023-12-10"],
+      "timeSlots": ["10:00 AM - 11:00 AM", "2:00 PM - 3:00 PM", "4:00 PM - 5:00 PM"],
+      "description": "A comprehensive blood test to assess various health indicators.",
+      "location": "Medical Lab A"
+    },
+    {
+      "id": 2,
+      "title": "X-ray Imaging",
+      "image": "https://i.ibb.co/TYpdy5Y/16354.jpg",
+      "availableDates": ["2023-12-02", "2023-12-07", "2023-12-12"],
+      "timeSlots": ["9:00 AM - 10:00 AM", "1:00 PM - 2:00 PM", "3:30 PM - 4:30 PM"],
+      "description": "X-ray examination to visualize internal structures of the body.",
+      "location": "Imaging Center B"
+    },
+    {
+      "id": 3,
+      "title": "ECG (Electrocardiogram)",
+      "image": "https://i.ibb.co/LhyNKfH/29035.jpg",
+      "availableDates": ["2023-12-03", "2023-12-08", "2023-12-14"],
+      "timeSlots": ["8:30 AM - 9:30 AM", "12:30 PM - 1:30 PM", "4:30 PM - 5:30 PM"],
+      "description": "Recording the electrical activity of the heart over a period of time.",
+      "location": "Cardiology Clinic C"
+    },
+    {
+      "id": 4,
+      "title": "MRI (Magnetic Resonance Imaging)",
+      "image": "https://i.ibb.co/pbPbDtC/44420.jpg",
+      "availableDates": ["2023-12-04", "2023-12-09", "2023-12-15"],
+      "timeSlots": ["11:30 AM - 12:30 PM", "3:00 PM - 4:00 PM", "5:30 PM - 6:30 PM"],
+      "description": "Detailed imaging of internal structures using magnetic fields and radio waves.",
+      "location": "Imaging Center D"
+    },
+    {
+      "id": 5,
+      "title": "Ultrasound Scan",
+      "image": "ultrasound_image_url.jpg",
+      "availableDates": ["2023-12-06", "2023-12-11", "2023-12-16"],
+      "timeSlots": ["10:30 AM - 11:30 AM", "2:30 PM - 3:30 PM", "4:30 PM - 5:30 PM"],
+      "description": "High-frequency sound waves to create images of internal body structures.",
+      "location": "Radiology Center E"
+    },
+    {
+      "id": 6,
+      "title": "Pap Smear",
+      "image": "https://i.ibb.co/3Mvs6Jx/44352.jpg",
+      "availableDates": ["2023-12-07", "2023-12-12", "2023-12-18"],
+      "timeSlots": ["9:30 AM - 10:30 AM", "1:30 PM - 2:30 PM", "3:30 PM - 4:30 PM"],
+      "description": "Screening test for cervical cancer in women.",
+      "location": "Gynecology Clinic F"
+    },
+    {
+      "id": 7,
+      "title": "Colonoscopy",
+      "image": "colonoscopy_image_url.jpg",
+      "availableDates": ["2023-12-08", "2023-12-13", "2023-12-19"],
+      "timeSlots": ["8:00 AM - 9:00 AM", "12:00 PM - 1:00 PM", "2:00 PM - 3:00 PM"],
+      "description": "Examination of the colon for abnormalities and to detect colorectal cancer.",
+      "location": "Gastroenterology Center G"
+    },
+    {
+      "id": 8,
+      "title": "Allergy Testing",
+      "image": "allergy_testing_image_url.jpg",
+      "availableDates": ["2023-12-09", "2023-12-14", "2023-12-20"],
+      "timeSlots": ["10:00 AM - 11:00 AM", "2:00 PM - 3:00 PM", "4:00 PM - 5:00 PM"],
+      "description": "Identifying allergens that may be causing allergic reactions.",
+      "location": "Allergy Clinic H"
+    },
+    {
+      "id": 9,
+      "title": "Bone Density Test",
+      "image": "bone_density_image_url.jpg",
+      "availableDates": ["2023-12-10", "2023-12-15", "2023-12-21"],
+      "timeSlots": ["11:00 AM - 12:00 PM", "3:00 PM - 4:00 PM", "5:00 PM - 6:00 PM"],
+      "description": "Measuring bone mineral density to assess risk of fractures.",
+      "location": "Orthopedic Clinic I"
+    },
+    {
+      "id": 10,
+      "title": "Thyroid Function Test",
+      "image": "thyroid_test_image_url.jpg",
+      "availableDates": ["2023-12-11", "2023-12-16", "2023-12-22"],
+      "timeSlots": ["9:00 AM - 10:00 AM", "1:00 PM - 2:00 PM", "3:30 PM - 4:30 PM"],
+      "description": "Evaluating the function of the thyroid gland.",
+      "location": "Endocrinology Clinic J"
+    },
+    {
+      "id": 11,
+      "title": "HIV/AIDS Screening",
+      "image": "hiv_screening_image_url.jpg",
+      "availableDates": ["2023-12-12", "2023-12-17", "2023-12-23"],
+      "timeSlots": ["8:30 AM - 9:30 AM", "12:30 PM - 1:30 PM", "4:30 PM - 5:30 PM"],
+      "description": "Testing for the presence of HIV antibodies or antigens.",
+      "location": "Infectious Disease Clinic K"
+    },
+    {
+      "id": 12,
+      "title": "Lung Function Test",
+      "image": "lung_function_test_image_url.jpg",
+      "availableDates": ["2023-12-13", "2023-12-18", "2023-12-24"],
+      "timeSlots": ["10:30 AM - 11:30 AM", "2:30 PM - 3:30 PM", "4:30 PM - 5:30 PM"],
+      "description": "Assessing the capacity and function of the lungs.",
+      "location": "Pulmonary Clinic L"
+    }
+  ]
+  
