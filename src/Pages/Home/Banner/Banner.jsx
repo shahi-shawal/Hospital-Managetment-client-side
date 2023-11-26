@@ -13,7 +13,7 @@ const Banner = () => {
         .then(data=> setBanner(data))
     },[])
     return (
-        <div>
+        <div className="">
             {
                 banner.map((hero, idx)=><div key={idx}>
                    {
@@ -23,13 +23,13 @@ const Banner = () => {
                       <div data-aos="fade-up" className="max-w-md">
                         <h1 className="mb-5 text-4xl font-bold">{hero.title}</h1>
                         <p className="mb-2">{hero.text}</p>
-                        <p className="mb-2">Try To Healthy <span className="text-2xl font-bold text-green-400">{hero.coupon.code}</span> </p>
-                        <Link><button className="btn btn-accent text-white">Get Started</button></Link>
+                        <p className="mb-2">Try To Healthy <span className="text-3xl font-bold ">{hero.coupon.code}</span> </p>
+                        <Link><button className="btn bg-[#6AAB9C] hover:bg-[#6AAB9C] text-white">Get Started</button></Link>
                       </div>
                     </div>
                   </div>
                   :
-                  <>No data</>
+                  <></>
                    }
                       
                 </div>)
