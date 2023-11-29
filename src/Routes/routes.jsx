@@ -15,6 +15,8 @@ import AllBanner from "../Pages/Dashboard/Banner/AllBanner";
 import AddBanner from "../Pages/Dashboard/Banner/AddBanner";
 import AdminRoutes from "./AdminRoutes/AdminRoutes";
 import PrivateRoute from "./PrivateRoutes/PrivateRoutes";
+import Profile from "../Pages/Dashboard/Userhome/Profile";
+import Appointment from "../Pages/Dashboard/Userhome/Appointment";
 
 const routes = createBrowserRouter([
     {
@@ -42,7 +44,11 @@ const routes = createBrowserRouter([
         element:<Dashboard></Dashboard>,
         children:[{
             path:"userhome",
-            element:<h1>User home</h1>
+            element:<Profile></Profile>
+        },
+        {
+            path:"appointments",
+            element:<Appointment></Appointment>
         },
         {
             path:"adminhome",

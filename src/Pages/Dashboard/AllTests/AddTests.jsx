@@ -12,7 +12,7 @@ const AddTests = () => {
         const form=e.target
         const name= form.name.value
         const timeslots= form.timeslots.value
-        const slots=form.slots.value
+        const slots=parseInt(form.slots.value)
         const price=form.price.value
         const  date=form.date.value
         const description=form.description.value

@@ -64,7 +64,7 @@ console.log(test);
            <h2 className="flex-1  flex flex-col flex-wrap  gap-1  mb-2">Time Slots: <h1 className="flex items-center gap-2"><IoMdTime />{alltest.timeslots}</h1> </h2>
          </div>
          <div className="flex flex-col gap-2">
-         <h2 className="flex items-center gap-2"><FaArrowCircleUp />Remainings Days: <h1 className="flex items-center gap-2">{Math.floor((new Date(alltest.date).getTime()- new Date().getTime())/(1000*60*60*24))===0 && "Next Day"}</h1> </h2>
+         <h2 className="flex items-center gap-2"><FaArrowCircleUp />Remainings Days: <h1 className="flex items-center gap-2">{Math.floor((new Date(alltest.date).getTime()- new Date().getTime())/(1000*60*60*24))}</h1> </h2>
            <h2 className="flex items-center gap-2"><FaArrowAltCircleDown />Remainings Slots:<h1 className="font-bold">{alltest.slots}</h1> </h2>
          </div>
          </div>

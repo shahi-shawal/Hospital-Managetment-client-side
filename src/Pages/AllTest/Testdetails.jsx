@@ -7,11 +7,39 @@ import Container from "../../Components/Container/Container";
 import { BsCalendarDate } from "react-icons/bs";
 import { IoLocation } from "react-icons/io5";
 import { IoMdTime } from "react-icons/io";
+import useAxiosSequre from "../../Hooks/useAxiosSequre";
+import { toast } from "react-hot-toast";
+import useAuth from "../../Hooks/useAuth";
 const Testdetails = () => {
-
+   const {user} = useAuth()
+   const patientemail= user.email
+   const reportStatus ="pending"
+   const axiosSequre = useAxiosSequre()
     const details = useLoaderData()
     console.log(details);
-    const {name,image,description,timeslots,date,slots } = details
+    const {_id,name,image,description,timeslots,date,slots } = details
+    const testbooked= {
+      name,image,description,timeslots,date,slots, patientemail, reportStatus
+    }
+    const handelBook=()=>{
+    
+    axiosSequre.post("/testbook", testbooked)
+    .then(res=>{
+      if (res.data.insertedId) {
+        toast.success(`${name} successFully book`)
+      }
+    })
+   
+   axiosSequre.patch(`/test/${_id}`)
+   .then(res=>{
+    console.log(res.data)
+   })
+
+
+   }
+  
+  
+  
     return (
         <div>
             <Header header={`Deatils/${name}`}></Header>
@@ -22,7 +50,25 @@ const Testdetails = () => {
     <div>
       <h1 className="text-5xl font-bold mb-5">{name}</h1>
       {/* <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p> */}
-      <button disabled={slots.length<0} className="btn bg-[#6AAB9C] hover:bg-[#6AAB9C] text-white"><TbHandClick size={26} /> Book Now</button>
+      <button  onClick={()=>handelBook()}  className="btn bg-[#6AAB9C] hover:bg-[#6AAB9C] text-white"><TbHandClick size={26} /> Book Now</button>
+      {/* <button  onClick={()=>document.getElementById('my_modal_5').showModal()}  disabled={slots.length<0} className="btn bg-[#6AAB9C] hover:bg-[#6AAB9C] text-white"><TbHandClick size={26} /> Book Now</button> */}
+    
+    {/* Open the modal using document.getElementById('ID').showModal() method */}
+
+<dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+  <div className="modal-box">
+    <h3 className="font-bold text-lg">Hello!</h3>
+    <p className="py-4">Press ESC key or click the button below to close</p>
+    <div className="modal-action">
+    <button  onClick={()=>handelBook()}  className="btn bg-[#6AAB9C] hover:bg-[#6AAB9C] text-white"><TbHandClick size={26} /> Book Now</button>
+      <form method="dialog">
+        {/* if there is a button in form, it will close the modal */}
+        <button className="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+    
     </div>
   </div>
   <Tabs className="text-center w-full">

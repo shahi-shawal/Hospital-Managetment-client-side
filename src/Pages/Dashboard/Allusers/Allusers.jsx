@@ -2,8 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSequre from "../../../Hooks/useAxiosSequre";
 import { FaInfo, FaTrash, FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 const Allusers = () => {
+  const [userInfo, setUserinfo]= useState([])
     const axiosSequre = useAxiosSequre()
     const {data: users=[], refetch}= useQuery({
         queryKey:["users"],
@@ -12,6 +14,14 @@ const Allusers = () => {
             return res.data
         }
     })
+    
+
+    const handelInfo=(email)=>{
+      console.log(email)
+      axiosSequre.get(`/users/${email}`)
+      .then(res=> setUserinfo(res.data))
+    }
+
     const handelMakeadmin=(item)=>{
         axiosSequre.patch(`/users/admin/${item._id}`)
         .then(res=>{
@@ -148,10 +158,24 @@ const handelMakeActive=(item)=>{
     <td><div>
           <div className="font-bold">{item.email}</div>
         </div></td>
-    <td><div>
-    <button onClick={()=>handelMakeadmin(item)} className="btn btn-ghost text-white bg-yellow-500 btn-sm">
-        <FaInfo />
+    <td><div onClick={()=>document.getElementById('my_modal_5').showModal()}>
+       <button onClick={()=>handelInfo(item.email)}  className="btn btn-ghost text-white bg-yellow-500 btn-sm">
+        <FaInfo  />
       </button>
+      <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+  <div className="modal-box">
+    <h3 className="font-bold text-lg">Name:{userInfo.name}</h3>
+    <h3 className="font-bold text-lg">District:{userInfo.district}</h3>
+    <h3 className="font-bold text-lg">Upazila:{userInfo.upazila}</h3>
+    <h3 className="font-bold text-lg">Blood G::{userInfo.blood}</h3>
+    <div className="modal-action">
+      <form method="dialog">
+        {/* if there is a button in form, it will close the modal */}
+        <button className="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
         </div></td>
         <td><div>
        {

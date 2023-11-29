@@ -32,7 +32,7 @@ const location = useLocation()
         login(email, password)
         .then(result =>{
           console.log(result.user)
-          navigate(location?.state? location.state : "/")
+          navigate(location?.state? location.state : "/dashboard")
           return  toast.success("Log in successfully")
         })
         .catch(error=> {console.error(error)

@@ -1,14 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo (2).png"
 import useAuth from "../../../Hooks/useAuth";
-// import { FaCartArrowDown } from "react-icons/fa";
-// import useCart from "../../../Hooks/useCart";
-// import useAdmin from "../../../Hooks/useAdmin";
+import useAdmin from "../../../Hooks/useAdmin";
 const Navbar = () => {
   const {user, logOut}= useAuth()
-//   const [isAdmin] = useAdmin()
-//   const [cart]= useCart()
-const isAdmin= true
+  const [isAdmin] = useAdmin()
+
     const navlinks = <>
        <NavLink to="/"><li><a>Home</a></li></NavLink>
        <NavLink to="/alltest"><li><a>All tests</a></li></NavLink>
@@ -18,21 +15,13 @@ const isAdmin= true
         <NavLink><li><a>Blogs</a></li></NavLink>
         <NavLink><li><a>Contact Us</a></li></NavLink>
 
-        {
-          user? <>  <NavLink to="/ourshop/salads"> <li><a>Our Shop</a></li></NavLink> </> : <Link to="/login"></Link>
-        }
+        
         {
           user && isAdmin &&  <NavLink to="/dashboard/adminhome"><li><a>Dashboard</a></li></NavLink>
         }
         {
           user && !isAdmin &&  <NavLink to="/dashboard/userhome"><li><a>Dashboard</a></li></NavLink>
         }
-       {/* <Link to="/dashboard/cart">
-        <button className="btn btn-xs">
-        <FaCartArrowDown />
-  <div className="badge badge-secondary">+{cart.length}</div>
-</button>
-        </Link> */}
       
     </>
     const handelLogout=()=>{
