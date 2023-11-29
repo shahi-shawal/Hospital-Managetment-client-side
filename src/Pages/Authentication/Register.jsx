@@ -5,9 +5,12 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import { toast } from 'react-hot-toast';
 import { updateProfile } from 'firebase/auth';
 import { uploedImage } from '../../Utility/Utility';
+import useAxiosSequre from '../../Hooks/useAxiosSequre';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
 
 const Register = () => {
     const navigate = useNavigate()
+    const axiosPublic = useAxiosPublic()
     const {createUser}= useContext(AuthContext)
     const [district, setDistrict]= useState([])
     const [upazila, setUpazila]= useState([])
@@ -35,7 +38,9 @@ const Register = () => {
         const blood= form.blood.value
         const upazila= form.upazila.value
         const district= form.district.value
+        const status="active"
         const loginData = {email, password,Confirmpassword,uploadimage, name, upazila,district,blood}
+        const  userData = {name,email,status,uploadimage,  upazila,district,blood}
         console.log(loginData);
 
         if (password.length < 6) {
@@ -55,22 +60,31 @@ const Register = () => {
          createUser(email, password)
          .then(result=> {
           // const cuser= result.user;
-         toast.success("Successfully register")
+           axiosPublic.post("/users", userData)
+           .then(res=>{
+            if(res.data.insertedId)
+            toast.success("Successfully register")
+           })
+        
+        
+
          updateProfile(result.user, {
           displayName:name,
           photoURL:uploadimage
          })
          .then()
          .catch()
+         
          navigate("/")
          return 
        })
+
        .catch(error=>{
           console.error(error)
           return toast.error("Check your email and password")
           
     })
-
+    
     }
     return (
         <div>
