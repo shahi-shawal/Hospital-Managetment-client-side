@@ -17,6 +17,7 @@ import AdminRoutes from "./AdminRoutes/AdminRoutes";
 import PrivateRoute from "./PrivateRoutes/PrivateRoutes";
 import Profile from "../Pages/Dashboard/Userhome/Profile";
 import Appointment from "../Pages/Dashboard/Userhome/Appointment";
+import Reservation from "../Pages/Dashboard/Resrvation/Reservation";
 
 const routes = createBrowserRouter([
     {
@@ -34,7 +35,7 @@ const routes = createBrowserRouter([
         {
             path:"details/:id",
             element:<PrivateRoute><Testdetails></Testdetails></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/tests/${params.id}`)
+            loader:({params})=>fetch(`https://assignment-12-server-five-jade.vercel.app/tests/${params.id}`)
         },
        
     ]
@@ -69,7 +70,7 @@ const routes = createBrowserRouter([
         {
             path:"updateTest/:id",
             element:<AdminRoutes><EditTest></EditTest></AdminRoutes>,
-            loader:({params})=>fetch(`http://localhost:5000/tests/${params.id}`)
+            loader:({params})=>fetch(`https://assignment-12-server-five-jade.vercel.app/tests/${params.id}`)
         },
         {
             path:"allbanner",
@@ -78,6 +79,9 @@ const routes = createBrowserRouter([
         {
            path:"addbanner",
            element:<AdminRoutes><AddBanner></AddBanner></AdminRoutes>
+        },{
+            path:"reservation",
+            element:<Reservation></Reservation>
         }
     
     ]

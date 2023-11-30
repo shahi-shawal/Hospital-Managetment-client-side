@@ -28,7 +28,7 @@ const Deshboard = () => {
                      <li>
                         <NavLink to="/dashboard/allservice"><FaBookMedical className="text-2xl" />All tests</NavLink></li>
                      <li>
-                        <NavLink to="/dashboard/managebookings"><FaRandom className="text-2xl" />Reservation</NavLink></li>
+                        <NavLink to="/dashboard/reservation"><FaRandom className="text-2xl" />Reservation</NavLink></li>
                      <li>
                         <NavLink to="/dashboard/allusers"><FaUsers className="text-2xl" />All users </NavLink></li>
                 </ul>

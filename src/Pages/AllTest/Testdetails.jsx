@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 import { TbHandClick } from "react-icons/tb";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -10,6 +10,8 @@ import { IoMdTime } from "react-icons/io";
 import useAxiosSequre from "../../Hooks/useAxiosSequre";
 import { toast } from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
+import Payment from "./Payment/Payment";
+import { FaStripe } from "react-icons/fa";
 const Testdetails = () => {
    const {user} = useAuth()
    const patientemail= user.email
@@ -50,17 +52,17 @@ const Testdetails = () => {
     <div>
       <h1 className="text-5xl font-bold mb-5">{name}</h1>
       {/* <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p> */}
+      <div onClick={()=>document.getElementById('my_modal_5').showModal()}    disabled={slots.length<0}>
       <button  onClick={()=>handelBook()}  className="btn bg-[#6AAB9C] hover:bg-[#6AAB9C] text-white"><TbHandClick size={26} /> Book Now</button>
-      {/* <button  onClick={()=>document.getElementById('my_modal_5').showModal()}  disabled={slots.length<0} className="btn bg-[#6AAB9C] hover:bg-[#6AAB9C] text-white"><TbHandClick size={26} /> Book Now</button> */}
+      </div>
     
     {/* Open the modal using document.getElementById('ID').showModal() method */}
 
 <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
   <div className="modal-box">
-    <h3 className="font-bold text-lg">Hello!</h3>
-    <p className="py-4">Press ESC key or click the button below to close</p>
+    <h1 className="text-xl font-bold text-center">Pay Your bill with Stripe </h1>
+   <Link to="payment"> <button   className="btn bg-[#F7A582] hover:bg-[#6AAB9C] w-full mt-5 text-white"><FaStripe size={26} />Pay</button></Link>
     <div className="modal-action">
-    <button  onClick={()=>handelBook()}  className="btn bg-[#6AAB9C] hover:bg-[#6AAB9C] text-white"><TbHandClick size={26} /> Book Now</button>
       <form method="dialog">
         {/* if there is a button in form, it will close the modal */}
         <button className="btn">Close</button>

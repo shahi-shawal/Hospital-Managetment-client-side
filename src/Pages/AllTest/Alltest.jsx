@@ -12,7 +12,7 @@ const Alltest = () => {
    const [test, setTest]= useState([])
 
    useEffect(()=>{
-    fetch(`http://localhost:5000/tests?search=${searching}`)
+    fetch(`https://assignment-12-server-five-jade.vercel.app/tests?search=${searching}`)
     .then(res=> res.json())
     .then(data=>setTest(data))
  },[searching])

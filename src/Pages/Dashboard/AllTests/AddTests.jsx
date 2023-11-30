@@ -15,6 +15,7 @@ const AddTests = () => {
         const slots=parseInt(form.slots.value)
         const price=form.price.value
         const  date=form.date.value
+        const book=0
         const description=form.description.value
         const image= form.image.files[0]
         const imagedata = await uploedImage(image)
@@ -29,7 +30,8 @@ const AddTests = () => {
             price,
             date,
             image:uploadimage,
-            description
+            description,
+            book
         }
       console.log(addTest);
         const testItem = await axiosSequre.post("/tests", addTest)

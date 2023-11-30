@@ -90,7 +90,7 @@ const Allservice = () => {
         <div className="font-bold">{item.slots}</div>
         </div></td>
         <td><div>
-        <div className="font-bold">Reservation</div>
+        <div className="font-bold">{item.book}</div>
         </div></td>
     <th className="flex gap-4">
       <Link to={`/dashboard/updateTest/${item._id}`}><button onClick={()=>handelUpdate(item)} className="btn btn-ghost text-white bg-green-500 btn-sm">
