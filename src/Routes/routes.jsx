@@ -18,6 +18,7 @@ import PrivateRoute from "./PrivateRoutes/PrivateRoutes";
 import Profile from "../Pages/Dashboard/Userhome/Profile";
 import Appointment from "../Pages/Dashboard/Userhome/Appointment";
 import Reservation from "../Pages/Dashboard/Resrvation/Reservation";
+import Testresults from "../Pages/Dashboard/Userhome/Testresults";
 
 const routes = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const routes = createBrowserRouter([
         {
             path:"appointments",
             element:<Appointment></Appointment>
+        },
+        {
+            path:"testresult",
+            element:<Testresults></Testresults>
         },
         {
             path:"adminhome",

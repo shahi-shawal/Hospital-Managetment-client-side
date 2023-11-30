@@ -73,8 +73,13 @@ const Reservation = () => {
 const handelReport=async e=>{
     e.preventDefault()
     const report= e.target.report.value
+    const email = e.target.patientemail.value
+    const reportname= e.target.reportname.value
     console.log(report);
-    const reportlink = await axiosSequre.post("/report", report)
+    const reports ={email, report,reportname}
+
+    console.log(reports)
+    const reportlink = await axiosSequre.post("/report", reports)
         console.log(reportlink.data)
         if (reportlink.data.insertedId) {
             toast.success("Report delivered successFully")
@@ -150,6 +155,8 @@ const handelReport=async e=>{
     <h1 className="text-xl font-bold text-center">Send Report link </h1>
     <form onSubmit={handelReport}>
     <input className="w-full mt-4 p-4 input input-bordered" type="text" placeholder="Report Link" name="report" id="" />
+    <input defaultValue={item.patientemail} hidden className="w-full mt-4 p-4 input input-bordered" type="text" placeholder="Report Link" name="patientemail" id="" />
+    <input defaultValue={item.name} hidden className="w-full mt-4 p-4 input input-bordered" type="text" placeholder="Report Link" name="reportname" id="" />
     <button onClick={()=>handelSubmit(item)}  className="btn bg-[#F7A582] hover:bg-[#6AAB9C] w-full mt-5 text-white"><BsSend size={26} />Send</button>
     </form>
    
