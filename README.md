@@ -1,8 +1,10 @@
-# React + Vite
+#Feature:
+1.Add dynamicly banner, coupon Code
+2.Feature test 
+3.payment intregation with stripe
+4.admin add test, delete test, updated test
+5.user book test and see remaing day 
+6.Jwt intregation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#Tecnology:
+React, fairebase, tailwind, Dasiyui,Express js, Mongodb,stripe
