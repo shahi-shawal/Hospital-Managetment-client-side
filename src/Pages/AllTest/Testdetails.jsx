@@ -12,8 +12,10 @@ import { toast } from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 import Payment from "./Payment/Payment";
 import { FaStripe } from "react-icons/fa";
+import useActive from "../../Hooks/useActive";
 const Testdetails = () => {
    const {user} = useAuth()
+   const [isStatus] = useActive()
    const patientemail= user.email
    const reportStatus ="pending"
    const axiosSequre = useAxiosSequre()
@@ -52,9 +54,13 @@ const Testdetails = () => {
     <div>
       <h1 className="text-5xl font-bold mb-5">{name}</h1>
       {/* <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p> */}
-      <div onClick={()=>document.getElementById('my_modal_5').showModal()}    disabled={slots.length<0}>
-      <button  onClick={()=>handelBook()}  className="btn bg-[#6AAB9C] hover:bg-[#6AAB9C] text-white"><TbHandClick size={26} /> Book Now</button>
-      </div>
+      {
+        !isStatus ? <> <div onClick={()=>document.getElementById('my_modal_5').showModal()}    disabled={slots.length<0}>
+  
+        <button  onClick={()=>handelBook()}  className="btn bg-[#6AAB9C] hover:bg-[#6AAB9C] text-white"><TbHandClick size={26} /> Book Now</button>
+       </div>
+       </>  :<><h1 className="text-xl font-bold text-red-500">Your Access Is Block</h1></>
+      }
     
     {/* Open the modal using document.getElementById('ID').showModal() method */}
 

@@ -2,12 +2,15 @@ import { NavLink, Outlet } from "react-router-dom";
 import { FaBookMedical, FaBookmark, FaCalendar, FaExclamation, FaHome,  FaRandom,FaRegShareSquare,FaThemeco,FaThemeisle,FaUsers } from "react-icons/fa";
 import logo from "../assets/logo (2).png"
 import useAdmin from "../Hooks/useAdmin";
+import useActive from "../Hooks/useActive";
 
 const Deshboard = () => {
     
    
     // TODO: get is admin value form database 
     const [isAdmin] = useAdmin()
+    const [isStatus] = useActive()
+    console.log(isStatus);
     return (
         <div className="flex text-white font-bold">
              <div className="w-64 min-h-screen bg-[#6AAB9C]">
@@ -34,15 +37,28 @@ const Deshboard = () => {
                 </ul>
                     </> :
                     <>
-                      <ul className="menu">
-                <li>
-                        <NavLink to="/dashboard/userhome"><FaHome className="text-2xl" /> My Profile </NavLink></li>
-                <li>
-                        <NavLink to="/dashboard/appointments"><FaCalendar className="text-2xl" />My Upcoming Appointments</NavLink></li>
-                    
-                     <li>
-                        <NavLink to="/dashboard/testresult"><FaRegShareSquare className="text-2xl" />Test results</NavLink></li>
-                </ul>
+                    {
+                        !isStatus? 
+                        <>
+                         <ul className="menu">
+              <li>
+                      <NavLink to="/dashboard/userhome"><FaHome className="text-2xl" /> My Profile </NavLink></li>
+              <li>
+                      <NavLink to="/dashboard/appointments"><FaCalendar className="text-2xl" />My Upcoming Appointments</NavLink></li>
+                  
+                   <li>
+                      <NavLink to="/dashboard/testresult"><FaRegShareSquare className="text-2xl" />Test results</NavLink></li>
+              </ul>
+                           
+                       
+                  </>
+                        
+                        :<>
+                          
+                          <h1 className="text-red-600 p-2 text-2xl font-bold">Your Access is Block</h1>
+                         
+                        </>
+                    }
                     </>
                 }
                 <hr></hr>

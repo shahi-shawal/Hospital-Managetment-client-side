@@ -5,7 +5,6 @@ import useAdmin from "../../../Hooks/useAdmin";
 const Navbar = () => {
   const {user, logOut}= useAuth()
   const [isAdmin] = useAdmin()
-
     const navlinks = <>
        <NavLink to="/"><li><a>Home</a></li></NavLink>
        <NavLink to="/alltest"><li><a>All tests</a></li></NavLink>
@@ -14,7 +13,6 @@ const Navbar = () => {
         <NavLink><li><a>Department</a></li></NavLink>
         <NavLink><li><a>Blogs</a></li></NavLink>
         <NavLink><li><a>Contact Us</a></li></NavLink>
-
         
         {
           user && isAdmin &&  <NavLink to="/dashboard/adminhome"><li><a>Dashboard</a></li></NavLink>

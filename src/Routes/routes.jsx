@@ -36,7 +36,7 @@ const routes = createBrowserRouter([
         {
             path:"details/:id",
             element:<PrivateRoute><Testdetails></Testdetails></PrivateRoute>,
-            loader:({params})=>fetch(`https://assignment-12-server-five-jade.vercel.app/tests/${params.id}`)
+            loader:({params})=>fetch(`http://localhost:5000/tests/${params.id}`)
         },
        
     ]
@@ -75,7 +75,7 @@ const routes = createBrowserRouter([
         {
             path:"updateTest/:id",
             element:<AdminRoutes><EditTest></EditTest></AdminRoutes>,
-            loader:({params})=>fetch(`https://assignment-12-server-five-jade.vercel.app/tests/${params.id}`)
+            loader:({params})=>fetch(`http://localhost:5000/tests/${params.id}`)
         },
         {
             path:"allbanner",
