@@ -13,10 +13,10 @@ const Reservation = () => {
     const [reserv, setTest]= useState([])
 
    useEffect(()=>{
-    fetch(`http://localhost:5000/testbook?serach=${searching}`)
+    fetch(`http://localhost:5000/testbook`)
     .then(res=> res.json())
     .then(data=>setTest(data))
- },[searching])
+ },[])
     const axiosSequre = useAxiosSequre()
     // const {data: reserv=[], refetch}= useQuery({
     //     queryKey:["reservation"],
@@ -75,6 +75,8 @@ const handelReport=async e=>{
     const report= e.target.report.value
     const email = e.target.patientemail.value
     const reportname= e.target.reportname.value
+    const id = e.target.id.value
+    console.log(id);
     console.log(report);
     const reports ={email, report,reportname}
 
@@ -84,14 +86,14 @@ const handelReport=async e=>{
         if (reportlink.data.insertedId) {
             toast.success("Report delivered successFully")
           }
-  
+         
 
     }
 
 
-    const handelSubmit=(item)=>{
-      
-        axiosSequre.patch(`/testbook/re/${item._id}`)
+    const handelSubmit=(id)=>{
+        console.log(id)
+        axiosSequre.patch(`/testbook/re/${id}`)
         .then(res=> console.log(res.data))
       }
    
@@ -157,9 +159,10 @@ const handelReport=async e=>{
     <input className="w-full mt-4 p-4 input input-bordered" type="text" placeholder="Report Link" name="report" id="" />
     <input defaultValue={item.patientemail} hidden className="w-full mt-4 p-4 input input-bordered" type="text" placeholder="Report Link" name="patientemail" id="" />
     <input defaultValue={item.name} hidden className="w-full mt-4 p-4 input input-bordered" type="text" placeholder="Report Link" name="reportname" id="" />
-    <button onClick={()=>handelSubmit(item)}  className="btn bg-[#F7A582] hover:bg-[#6AAB9C] w-full mt-5 text-white"><BsSend size={26} />Send</button>
+    {/* <input defaultValue={item._id} name="id" type="submit" /> */}
+    <button onClick={()=>handelSubmit(item._id)}  className="btn bg-[#F7A582] hover:bg-[#6AAB9C] w-full mt-5 text-white"><BsSend size={26} />Send</button>
     </form>
-   
+    
     <div className="modal-action">
       <form method="dialog">
         <button  className="btn">Close</button>

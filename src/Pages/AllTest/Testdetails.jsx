@@ -10,7 +10,6 @@ import { IoMdTime } from "react-icons/io";
 import useAxiosSequre from "../../Hooks/useAxiosSequre";
 import { toast } from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
-import Payment from "./Payment/Payment";
 import { FaStripe } from "react-icons/fa";
 import useActive from "../../Hooks/useActive";
 const Testdetails = () => {
@@ -21,9 +20,9 @@ const Testdetails = () => {
    const axiosSequre = useAxiosSequre()
     const details = useLoaderData()
     console.log(details);
-    const {_id,name,image,description,timeslots,date,slots } = details
+    const {_id,name,image,description,timeslots,price,date,slots } = details
     const testbooked= {
-      name,image,description,timeslots,date,slots, patientemail, reportStatus
+      name,image,description,timeslots,date,slots,price, patientemail, reportStatus
     }
     const handelBook=()=>{
     
@@ -93,23 +92,23 @@ const Testdetails = () => {
 }</h2>
     </TabPanel>
     <TabPanel >
-      <div className="flex items-center" > <img className="max-w-sm" src={img1} alt=""  />
+      <div className="flex items-center justify-center" > <img className="max-w-sm" src={img1} alt=""  />
     
-         <h1> <BsCalendarDate />
+         <h1 className="font-bold text-2xl"> <BsCalendarDate />
          {date}
          </h1>
 </div>
     </TabPanel>
     <TabPanel>
-    <div className="flex items-center" > <img className="max-w-sm" src={img1} alt=""  />
+    <div className="flex items-center justify-center" > <img className="max-w-sm" src={img1} alt=""  />
      
-         <h1> <IoMdTime  />
+         <h1 className="font-bold text-2xl"> <IoMdTime  />
          {timeslots}
          </h1>
 </div>
     </TabPanel>
     <TabPanel>
-    <h1 className="font-bold text-2xl mt-8">{slots}</h1>
+    <h1 className="font-bold text-2xl mt-8">Reamaings Slot : {slots}</h1>
     </TabPanel>
     <TabPanel>
       <h2 className="flex items-center justify-center text-xl font-bold"><IoLocation size={100} />{""}</h2>

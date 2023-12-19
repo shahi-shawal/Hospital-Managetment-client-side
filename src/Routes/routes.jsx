@@ -19,6 +19,7 @@ import Profile from "../Pages/Dashboard/Userhome/Profile";
 import Appointment from "../Pages/Dashboard/Userhome/Appointment";
 import Reservation from "../Pages/Dashboard/Resrvation/Reservation";
 import Testresults from "../Pages/Dashboard/Userhome/Testresults";
+import Payment from "../Pages/Dashboard/Userhome/Payment";
 
 const routes = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ const routes = createBrowserRouter([
         {
             path:"testresult",
             element:<Testresults></Testresults>
+        },
+        {
+            path:"payment",
+            element:<Payment></Payment>
         },
         {
             path:"adminhome",

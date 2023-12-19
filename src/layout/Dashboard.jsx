@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaBookMedical, FaBookmark, FaCalendar, FaExclamation, FaHome,  FaRandom,FaRegShareSquare,FaThemeco,FaThemeisle,FaUsers } from "react-icons/fa";
+import { FaBookMedical, FaBookmark, FaCalendar, FaExclamation, FaHome,   FaRandom,FaRegShareSquare,FaStripe,FaThemeco,FaThemeisle,FaUsers } from "react-icons/fa";
 import logo from "../assets/logo (2).png"
 import useAdmin from "../Hooks/useAdmin";
 import useActive from "../Hooks/useActive";
@@ -18,7 +18,7 @@ const Deshboard = () => {
                 <h1 className="text-2xl font-bold text-center">Health Lab</h1>
                 {
                     isAdmin? <>
-                      <ul className="menu">
+                      <ul className="menu text-xl">
                 <li className="">
                         <NavLink to="/dashboard/adminhome"><FaHome className="text-2xl" /> Admin Home</NavLink></li>
                 <li>
@@ -40,7 +40,7 @@ const Deshboard = () => {
                     {
                         !isStatus? 
                         <>
-                         <ul className="menu">
+                         <ul className="menu text-xl">
               <li>
                       <NavLink to="/dashboard/userhome"><FaHome className="text-2xl" /> My Profile </NavLink></li>
               <li>
@@ -48,6 +48,8 @@ const Deshboard = () => {
                   
                    <li>
                       <NavLink to="/dashboard/testresult"><FaRegShareSquare className="text-2xl" />Test results</NavLink></li>
+                   <li>
+                      <NavLink to="/dashboard/payment"><FaStripe className="text-2xl" />Payment</NavLink></li>
               </ul>
                            
                        
@@ -62,7 +64,7 @@ const Deshboard = () => {
                     </>
                 }
                 <hr></hr>
-                <ul className="menu">
+                <ul className="menu text-xl">
                     <li>
                         <NavLink to="/">
                             <FaHome className="text-2xl" />Home</NavLink>
