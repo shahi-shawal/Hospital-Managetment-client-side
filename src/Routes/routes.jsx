@@ -20,6 +20,7 @@ import Appointment from "../Pages/Dashboard/Userhome/Appointment";
 import Reservation from "../Pages/Dashboard/Resrvation/Reservation";
 import Testresults from "../Pages/Dashboard/Userhome/Testresults";
 import Payment from "../Pages/Dashboard/Userhome/Payment";
+import Pay from "../Pages/Dashboard/Userhome/Payment/Pay";
 
 const routes = createBrowserRouter([
     {
@@ -37,7 +38,7 @@ const routes = createBrowserRouter([
         {
             path:"details/:id",
             element:<PrivateRoute><Testdetails></Testdetails></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/tests/${params.id}`)
+            loader:({params})=>fetch(`https://assignment-12-server-five-jade.vercel.app/tests/${params.id}`)
         },
        
     ]
@@ -62,6 +63,10 @@ const routes = createBrowserRouter([
             element:<Payment></Payment>
         },
         {
+            path:"payment/pay",
+            element:<Pay></Pay>
+        },
+        {
             path:"adminhome",
             element:<AdminRoutes><Adminhome></Adminhome></AdminRoutes>
         },
@@ -80,7 +85,7 @@ const routes = createBrowserRouter([
         {
             path:"updateTest/:id",
             element:<AdminRoutes><EditTest></EditTest></AdminRoutes>,
-            loader:({params})=>fetch(`http://localhost:5000/tests/${params.id}`)
+            loader:({params})=>fetch(`https://assignment-12-server-five-jade.vercel.app/tests/${params.id}`)
         },
         {
             path:"allbanner",

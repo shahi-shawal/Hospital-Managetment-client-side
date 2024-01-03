@@ -63,18 +63,7 @@ const Testdetails = () => {
     
     {/* Open the modal using document.getElementById('ID').showModal() method */}
 
-<dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-  <div className="modal-box">
-    <h1 className="text-xl font-bold text-center">Pay Your bill with Stripe </h1>
-   <Link to="payment"> <button   className="btn bg-[#F7A582] hover:bg-[#6AAB9C] w-full mt-5 text-white"><FaStripe size={26} />Pay</button></Link>
-    <div className="modal-action">
-      <form method="dialog">
-        {/* if there is a button in form, it will close the modal */}
-        <button className="btn">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
+
     
     </div>
   </div>
@@ -121,3 +110,18 @@ const Testdetails = () => {
 };
 
 export default Testdetails;
+
+
+
+{/* <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+  <div className="modal-box">
+    <h1 className="text-xl font-bold text-center">Pay Your bill with Stripe </h1>
+   <Link to="payment"> <button   className="btn bg-[#F7A582] hover:bg-[#6AAB9C] w-full mt-5 text-white"><FaStripe size={26} />Pay</button></Link>
+    <div className="modal-action">
+      <form method="dialog">
+        {/* if there is a button in form, it will close the modal */}
+//         <button className="btn">Close</button>
+//       </form>
+//     </div>
+//   </div>
+// </dialog> */}

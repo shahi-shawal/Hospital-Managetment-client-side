@@ -8,7 +8,7 @@ const Banner = () => {
         AOS.refresh();
       }, []);
     useEffect(()=>{
-        fetch("http://localhost:5000/banner")
+        fetch("https://assignment-12-server-five-jade.vercel.app/banner")
         .then(res=> res.json())
         .then(data=> setBanner(data))
     },[])

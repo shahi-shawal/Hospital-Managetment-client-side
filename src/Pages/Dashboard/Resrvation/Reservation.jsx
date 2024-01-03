@@ -13,7 +13,7 @@ const Reservation = () => {
     const [reserv, setTest]= useState([])
 
    useEffect(()=>{
-    fetch(`http://localhost:5000/testbook`)
+    fetch(`https://assignment-12-server-five-jade.vercel.app/testbook`)
     .then(res=> res.json())
     .then(data=>setTest(data))
  },[])

@@ -3,7 +3,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
 
 const stripePromise= loadStripe(import.meta.env.VITE_PAYMENT_PK)
-const Payment = () => {
+const Pay = () => {
     return (
         <div>
             <Elements stripe={stripePromise}>
@@ -13,4 +13,4 @@ const Payment = () => {
     );
 };
 
-export default Payment;
+export default Pay;

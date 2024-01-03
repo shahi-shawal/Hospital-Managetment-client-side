@@ -13,7 +13,7 @@ const AddTests = () => {
         const name= form.name.value
         const timeslots= form.timeslots.value
         const slots=parseInt(form.slots.value)
-        const price=form.price.value
+        const price=parseInt(form.price.value)
         const  date=form.date.value
         const book=0
         const description=form.description.value

@@ -38,10 +38,11 @@ const CheckoutForm = () => {
         options={{
           style: {
             base: {
-              fontSize: '16px',
+              fontSize: '20px',
               color: '#424770',
               '::placeholder': {
                 color: '#aab7c4',
+                
               },
             },
             invalid: {
@@ -51,7 +52,7 @@ const CheckoutForm = () => {
         }}
       />  
       <p className="text-red-400">{error}</p>      
-       <button className="btn btn-sm bg-green-400 my-4" type="submit" >
+       <button className="btn btn-sm bg-green-400 my-4" type="submit" disabled={!stripe}>
         Pay
       </button>      
             </from>
