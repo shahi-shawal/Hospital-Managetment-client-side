@@ -21,7 +21,7 @@ const FeaturedTest = () => {
             <div>
                 <h1 className="font-bold text-center p-4  text-4xl">Our Featured Tests</h1>
             </div>
-            <div className="flex flex-row flex-wrap gap-6 pl-10 ">
+            <div className="flex flrx-col lg:flex-row flex-wrap  lg:gap-6 pl-5 lg:pl-10 ">
           {
             featuretest.map((alltest)=> <div key={alltest.id}>
             <div className="mt-10 mb-10">

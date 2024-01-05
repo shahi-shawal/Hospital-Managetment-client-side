@@ -68,7 +68,7 @@ const Testdetails = () => {
     </div>
   </div>
   <Tabs className="text-center w-full">
-    <TabList className="btn w-full bg-[#F7A582] text-white hover:bg-[#6AAB9C] gap-40">
+    <TabList className="btn h-20 lg:h-auto w-full bg-[#F7A582] text-white hover:bg-[#6AAB9C] lg:gap-40">
       <Tab>Description</Tab>
       <Tab>Avalaible Date</Tab>
       <Tab>Time Slot</Tab>

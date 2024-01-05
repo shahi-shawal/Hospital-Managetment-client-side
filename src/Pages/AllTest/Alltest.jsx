@@ -47,7 +47,7 @@ console.log(test);
            <input  className="btn btn-accent text-white" type="submit" value="Search" />
            </form>
            </div>
-          <div className="grid grid-cols-3 pl-10 bg-gray-200 ">
+          <div className="grid grid-cols-1 lg:grid-cols-3 pl-5 lg:pl-10 bg-gray-200 ">
           {
             test.map((alltest)=> <div key={alltest.id}>
             <div className="mt-10 mb-10">

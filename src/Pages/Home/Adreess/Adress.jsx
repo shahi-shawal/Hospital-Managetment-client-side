@@ -5,9 +5,9 @@ import mbl from "../../../assets/images/Frame (2).png"
 
 const Adress = () => {
     return (
-        <div className="pl-12">
+        <div className="pl-5 lg:pl-12">
            <Container>
-                <div className="mt-5 mb-5 flex gap-6">
+                <div className="mt-5 mb-5 flex flex-col lg:flex-row gap-6">
                    <div className="flex gap-4 items-center justify-center rounded-lg bg-[#6AAB9C] w-[364px] h-[202px]">
                     <img src={time} className="" alt=""  />
                     <div className="text-white">
