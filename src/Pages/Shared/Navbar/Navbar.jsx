@@ -8,11 +8,11 @@ const Navbar = () => {
     const navlinks = <>
        <NavLink to="/"><li><a>Home</a></li></NavLink>
        <NavLink to="/alltest"><li><a>All tests</a></li></NavLink>
-        <NavLink><li><a>About</a></li></NavLink>
-        <NavLink><li><a>Doctors</a></li></NavLink>
+        <NavLink to="/about"><li><a>About</a></li></NavLink>
+        {/* <NavLink><li><a>Doctors</a></li></NavLink>
         <NavLink><li><a>Department</a></li></NavLink>
         <NavLink><li><a>Blogs</a></li></NavLink>
-        <NavLink><li><a>Contact Us</a></li></NavLink>
+        <NavLink><li><a>Contact Us</a></li></NavLink> */}
         
         {
           user && isAdmin &&  <NavLink to="/dashboard/adminhome"><li><a>Dashboard</a></li></NavLink>
@@ -29,7 +29,7 @@ const Navbar = () => {
     }
     return (
         <div>
-            <div className="navbar fixed z-10 bg-opacity-60 bg-[#6AAB9C]">
+            <div className="navbar fixed z-10 bg-opacity-50 bg-[#6AAB9C]">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,8 +39,8 @@ const Navbar = () => {
      {navlinks}
       </ul>
     </div>
-    <img src={logo} className="h-10" alt=""  />
-    <h1 className="text-xl font-bold">Health Lab.</h1>
+    {/* <img src={logo} className="h-10" alt=""  /> */}
+    <h1 className="text-xl text-white font-bold">Health Lab</h1>
   </div>
   <div className="navbar-center hidden lg:flex ">
     <ul className="menu text-white menu-horizontal px-1 ">

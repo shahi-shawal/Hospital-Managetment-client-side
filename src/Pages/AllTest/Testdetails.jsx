@@ -81,17 +81,17 @@ const Testdetails = () => {
 }</h2>
     </TabPanel>
     <TabPanel >
-      <div className="flex items-center justify-center" > <img className="max-w-sm" src={img1} alt=""  />
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-center" > <img className="max-w-sm" src={img1} alt=""  />
     
-         <h1 className="font-bold text-2xl"> <BsCalendarDate />
+         <h1 className="flex justify-center items-center gap-2 font-bold text-2xl"> <BsCalendarDate />
          {date}
          </h1>
 </div>
     </TabPanel>
     <TabPanel>
-    <div className="flex items-center justify-center" > <img className="max-w-sm" src={img1} alt=""  />
+    <div className="flex flex-col-reverse lg:flex-row items-center justify-center" > <img className="max-w-sm" src={img1} alt=""  />
      
-         <h1 className="font-bold text-2xl"> <IoMdTime  />
+         <h1 className="flex justify-center items-center gap-2 font-bold text-2xl"> <IoMdTime  />
          {timeslots}
          </h1>
 </div>

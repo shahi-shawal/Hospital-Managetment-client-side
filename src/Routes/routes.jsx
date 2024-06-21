@@ -21,6 +21,7 @@ import Reservation from "../Pages/Dashboard/Resrvation/Reservation";
 import Testresults from "../Pages/Dashboard/Userhome/Testresults";
 import Payment from "../Pages/Dashboard/Userhome/Payment";
 import Pay from "../Pages/Dashboard/Userhome/Payment/Pay";
+import About from "../Pages/About/About";
 
 const routes = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const routes = createBrowserRouter([
         {
             path:"/alltest",
             element:<Alltest></Alltest>
+        },
+        {
+            path:"/about",
+            element:<About></About>
         },
         {
             path:"details/:id",

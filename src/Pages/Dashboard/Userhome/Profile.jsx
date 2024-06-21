@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSequre from "../../../Hooks/useAxiosSequre";
 import useAuth from "../../../Hooks/useAuth";
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaRegEdit } from "react-icons/fa";
+import { TbEdit, TbEditCircle } from "react-icons/tb";
 
 const Profile = () => {
   const { user } = useAuth();
@@ -22,9 +23,9 @@ const Profile = () => {
         Welcome to{" "}
         <span className="text-[#6AAB9C] uppercase">{profile.name}</span>
       </div>
-      <div className="card mt-10 absolute  flex flex-row justify-center items-center  bg-[#6AAB9C] shadow-xl">
-  <figure className="px-10 pt-10 pb-10 flex-1">
-    <img src={profile.uploadimage} alt="Shoes" className="w-80 h-64 rounded-xl" />
+      <div className="card mt-10 absolute mx-auto text-center  flex flex-col justify-center items-center ">
+  <figure className="px-10 pt-10 flex-1">
+    <img src={profile.uploadimage} alt="image" className="w-40 h-40 rounded-xl" />
   </figure>
   <div className="card-body  flex-1  text-black">
     <h2 className="card-title">Name: {profile.name}</h2>
@@ -32,8 +33,9 @@ const Profile = () => {
     <h2 className="card-title">Blood: {profile.blood}</h2>
     <h2 className="card-title">District: {profile.district}</h2>
     <h2 className="card-title">Upazila: {profile.upazila}</h2>
-    <div className="relative -top-[230px] bottom-0 left-[230px]">
-      <button className="btn btn-white"><FaEdit size={26} /></button>
+    <div className=" text-center">
+    {/* relative -top-[410px] bottom-0 left-[130px] */}
+      <button className="flex justify-center items-center gap-1 bg-green-500 btn"><TbEditCircle size={18} />Edit </button>
     </div>
   </div>
 </div>
